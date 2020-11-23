@@ -14,5 +14,11 @@ jobs:
       with:
         channel: any
         flutter-version: '1.17.4'
-    - name: npm install
+    - name: flutter version
+      run: flutter --version
+    - uses: dmitry-shibanov/flutter-action@add-any-channel
+      with:
+        channel: any
+        flutter-version: '1.22.x'
+    - name: flutter version with x
       run: flutter --version
