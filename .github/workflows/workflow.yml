@@ -1,0 +1,18 @@
+name: Test workflow
+on: [push]
+jobs:
+  run:
+    name: Run
+    runs-on: ${{ matrix.operating-system }}
+    strategy:
+      matrix:
+        operating-system: [ubuntu-latest, windows-latest, macos-latest]
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+    - uses: dmitry-shibanov/flutter-action@add-any-channel
+      with:
+        channel: any
+        flutter-version: '1.17.4'
+    - name: npm install
+      run: flutter --version
