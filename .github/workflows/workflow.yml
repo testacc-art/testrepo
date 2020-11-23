@@ -22,3 +22,9 @@ jobs:
         flutter-version: '1.22.x'
     - name: flutter version with x
       run: flutter --version
+    - uses: dmitry-shibanov/flutter-action@add-any-channel
+      with:
+        channel: any
+        flutter-version: '1.22.0.x'
+    - name: flutter version with 1.22.0.x
+      run: flutter --version
