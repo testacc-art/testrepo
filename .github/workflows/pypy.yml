@@ -6,11 +6,15 @@ jobs:
     name: Run
     runs-on: ${{ matrix.operating-system }}
     strategy:
+      fail-fast: false
       matrix:
         operating-system: [ubuntu-latest, windows-latest, macos-latest]
     steps:
     - name: Checkout
       uses: actions/checkout@v2
+    - name: check dir
+      run: ls -R /hostedtoolcache/PyPy
+      continue-on-error: true
     - uses: dmitry-shibanov/setup-python@v-dmshib/add-support-for-pypy
       with:
         python-version: 3.6
