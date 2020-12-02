@@ -43,4 +43,4 @@ jobs:
         python-version: 3.7
         pypy-version: 7.3.3
     - name: PyPy version
-      run: pypy --version
+      run: pypy3 --version
