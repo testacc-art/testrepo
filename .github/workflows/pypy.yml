@@ -12,6 +12,16 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v2
+    - name: Check pypy default
+      shell: pwsh
+      continue-on-error: true
+      run: |
+        if ($IsWindows){
+          pypy3 --version
+        } else {
+          pypy --version
+        }
+
     - name: check dir
       shell: pwsh
       run: |
