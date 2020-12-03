@@ -34,5 +34,5 @@ jobs:
         if($IsWindows) {
           pypy3 --version
         } else {
-          pypy3 --version
+          pypy --version
         }
