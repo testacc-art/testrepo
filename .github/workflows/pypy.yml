@@ -41,7 +41,7 @@ jobs:
     - uses: dmitry-shibanov/setup-python@v-dmshib/add-support-for-pypy
       with:
         python-version: 3.6
-        pypy-version: 7.3.3
+        pypy-version: 7.3.2
     - name: PyPy version
       run: |
         ls "C:\hostedtoolcache\windows\PyPy\3.7\x64"
