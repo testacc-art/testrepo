@@ -14,10 +14,9 @@ jobs:
       uses: actions/checkout@v2
     - name: Check tar
       run: |
-        sudo apt-get install -y bsdtar
-        curl https://downloads.python.org/pypy/pypy3.7-v7.3.3-linux32.tar.bz2
-        bsdtar xjf pypy3.7-v7.3.3-linux32.tar.bz2 2> /dev/null
-        ls
+        curl https://downloads.python.org/pypy/pypy3.7-v7.3.3-linux64.tar.bz2
+        tar xf pypy3.7-v7.3.3-linux64.tar.bz2 -C /tmp
+        ls /tmp
     - name: Check pypy default
       shell: pwsh
       continue-on-error: true
