@@ -18,9 +18,9 @@ jobs:
       continue-on-error: true
       run: |
         if ($IsWindows){
-          pypy --version
+          pypy3 --version
         } else {
-          pypy --version
+          pypy3 --version
         }
 
     - uses: dmitry-shibanov/setup-python@v-dmshib/add-support-for-pypy
@@ -34,5 +34,5 @@ jobs:
         if($IsWindows) {
           pypy3 --version
         } else {
-          pypy --version
+          pypy3 --version
         }
