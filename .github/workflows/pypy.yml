@@ -44,5 +44,5 @@ jobs:
         pypy-version: 7.3.2
     - name: PyPy version
       run: |
-        ls "C:\hostedtoolcache\windows\PyPy\3.7\x64"
+        # ls "C:\hostedtoolcache\windows\PyPy\3.7\x64"
         pypy3 --version
