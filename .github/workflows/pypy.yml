@@ -23,26 +23,10 @@ jobs:
           pypy --version
         }
 
-    - name: check dir
-      shell: pwsh
-      run: |
-          if ($IsWindows) {
-            $Dest = "C:/" 
-            $Path = "hostedtoolcache/windows"
-            $ToolsDirectory = $Dest + $Path
-            $toolcachePath = Join-Path $ToolsDirectory "PyPy"
-            ls -R $toolcachePath
-          } elseif ($IsLinux) {
-            ls -R /opt/hostedtoolcache/PyPy
-          } else {
-            $toolcachePath = Join-Path $env:HOME "hostedtoolcache" "PyPy"
-            ls -R $toolcachePath
-          }
-      continue-on-error: true
     - uses: dmitry-shibanov/setup-python@v-dmshib/add-support-for-pypy
       with:
-        python-version: 3.7
-        pypy-version: 7.3.3
+        python-version: 3.6
+        pypy-version: 7.3.2
     - name: PyPy version
       shell: pwsh
       run: |
