@@ -33,6 +33,9 @@ jobs:
         # ls "C:\hostedtoolcache\windows\PyPy\3.7\x64"
         if($IsWindows) {
           pypy3 --version
+          python3 --version
+          python --version
         } else {
+          python --version
           pypy --version
         }
