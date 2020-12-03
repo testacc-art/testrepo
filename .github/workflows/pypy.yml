@@ -14,8 +14,8 @@ jobs:
       uses: actions/checkout@v2
     - name: Check tar
       run: |
-        curl https://downloads.python.org/pypy/pypy3.7-v7.3.3-linux64.tar.bz2
-        tar xf pypy3.7-v7.3.3-linux64.tar.bz2 -C /tmp
+        curl https://downloads.python.org/pypy/pypy3.6-v7.3.2-linux64.tar.bz2
+        tar xf pypy3.6-v7.3.2-linux64.tar.bz2 -C /tmp
         ls /tmp
     - name: Check pypy default
       shell: pwsh
