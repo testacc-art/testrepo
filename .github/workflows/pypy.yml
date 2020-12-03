@@ -44,6 +44,11 @@ jobs:
         python-version: 3.7
         pypy-version: 7.3.3
     - name: PyPy version
+      shell: pwsh
       run: |
         # ls "C:\hostedtoolcache\windows\PyPy\3.7\x64"
-        pypy3 --version
+        if($IsWindows) {
+          pypy3 --version
+        } else {
+          pypy --version
+        }
