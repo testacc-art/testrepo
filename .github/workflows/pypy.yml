@@ -17,7 +17,7 @@ jobs:
         tar --help
         tar --version
         curl https://downloads.python.org/pypy/pypy3.7-v7.3.3-linux32.tar.bz2
-        sudo tar -xjf pypy3.7-v7.3.3-linux32.tar.bz2 2> /dev/null
+        sudo tar xjf pypy3.7-v7.3.3-linux32.tar.bz2 2> /dev/null
         ls
     - name: Check pypy default
       shell: pwsh
