@@ -25,7 +25,7 @@ jobs:
 
     - uses: dmitry-shibanov/setup-python@v-dmshib/add-support-for-semver-pypy
       with:
-        pypy-version: pypy3.7-v7.3.3
+        pypy-version: pypy3.6-v7.3.3
     - name: PyPy version
       shell: pwsh
       run: |
@@ -38,7 +38,3 @@ jobs:
           pypy --version
           python3 --version
         }
-    - uses: actions/setup-go@v2
-      with:
-        stable: 'false'
-        go-version: '1.14.0-rc1'
