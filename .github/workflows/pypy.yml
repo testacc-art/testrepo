@@ -27,7 +27,7 @@ jobs:
         }
     - uses: dmitry-shibanov/setup-python@v-dmshib/add-support-for-semver-pypy
       with:
-        pypy-version: pypy3.6-v7.3.3
+        pypy-version: pypy3.7-v7.3.x
     - name: PyPy version
       shell: pwsh
       run: |
