@@ -9,7 +9,7 @@ jobs:
       fail-fast: false
       matrix:
         operating-system: [ubuntu-18.04, macos-latest, windows-latest]
-        pypy: ['pypy3.7-v7.3.3', 'pypy3.6-v7.3.3', 'pypy3.7-v7.3.x', 'pypy3.6-v7.3.x', 'pypy3.x-v7.3.x', 'pypy3.7-v7.x', 'pypy3.x-v7.x', 'pypy2.7-v7.3.3', 'pypy2.7-v7.3.2']
+        pypy: ['pypy3.7-v7.3.3', 'pypy3.6-v7.3.3', 'pypy3.7-v7.3.x', 'pypy3.6-v7.3.x', 'pypy3.x-v7.3.x', 'pypy3.7-v7.x', 'pypy3.x-v7.x', 'pypy2.7-v7.3.3', 'pypy2.7-v7.3.2', 'pypy3.7-nightly']
     steps:
     - name: Checkout
       uses: actions/checkout@v2
@@ -26,7 +26,7 @@ jobs:
         } else {
           pypy3 --version
         }
-    - uses: dmitry-shibanov/setup-python@v-dmshib/add-support-for-semver-pypy
+    - uses: dmitry-shibanov/setup-python@v-dmshib/add-support-for-semver-nightly
       with:
         pypy-version: ${{ matrix.pypy }}
     - name: PyPy version
