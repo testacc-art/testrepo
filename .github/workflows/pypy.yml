@@ -25,8 +25,7 @@ jobs:
 
     - uses: dmitry-shibanov/setup-python@v-dmshib/add-support-for-pypy
       with:
-        python-version: 3.6
-        pypy-version: 7.3.3
+        pypy-version: pypy3.6-v7.3.3
     - name: PyPy version
       shell: pwsh
       run: |
