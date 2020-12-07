@@ -12,7 +12,6 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v2
-
     - name: Check pypy default
       shell: pwsh
       continue-on-error: true
@@ -22,14 +21,12 @@ jobs:
         } else {
           pypy3 --version
         }
-
     - uses: dmitry-shibanov/setup-python@v-dmshib/add-support-for-semver-pypy
       with:
-        pypy-version: pypy3.6-v7.3.2
+        pypy-version: pypy3.6-v7.3.x
     - name: PyPy version
       shell: pwsh
       run: |
-        # ls "C:\hostedtoolcache\windows\PyPy\3.7\x64"
         if($IsWindows) {
           pypy3 --version
           python --version
