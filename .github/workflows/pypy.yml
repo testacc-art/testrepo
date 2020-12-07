@@ -12,11 +12,14 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v2
+    - name: check arch node
+      shell: bash
+      continue-on-error: true
+      run: node -e 'const os = require("os"); console.log(os.arch())'
     - name: Check pypy default
       shell: pwsh
       continue-on-error: true
       run: |
-        node -e 'const os = require("os"); console.log(os.arch())'
         if ($IsWindows){
           pypy3 --version
         } else {
