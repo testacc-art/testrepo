@@ -20,10 +20,7 @@ jobs:
       shell: pwsh
       run: |
         if($IsWindows) {
-          pypy --version
           python --version
         } else {
           python --version
-          pypy --version
-          python3 --version
         }
