@@ -15,7 +15,7 @@ jobs:
       uses: actions/checkout@v2
     - uses: dmitry-shibanov/setup-python@v-dmshib/add-support-for-pypy
       with:
-        pypy-version: ${{ matrix.pypy }}
+        python-version: ${{ matrix.pypy }}
     - name: PyPy version
       shell: pwsh
       run: |
