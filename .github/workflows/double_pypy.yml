@@ -59,4 +59,4 @@ jobs:
     - name: Run simple code
       run: |
         pip install numpy
-        python -c 'import math; print(math.factorial(5))'
+        python -c 'import numpy as np;a = np.arange(15).reshape(3, 5);print(a)'
