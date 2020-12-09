@@ -18,6 +18,10 @@ jobs:
       run: |
         if($IsWindows) {
           ls C:\hostedtoolcache\windows\PyPy\3.6.12\x86
+        }elseif($IsLinux) {
+          ls /opt/hostedtoolcache/PyPy/3.6.12/x64/bin/
+        } else {
+          ls /Users/runner/hostedtoolcache/PyPy/3.6.12/x64/bin
         }
     - uses: dmitry-shibanov/setup-python@v-dmshib/add-support-for-pypy
       with:
