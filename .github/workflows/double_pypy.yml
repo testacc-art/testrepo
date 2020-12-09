@@ -17,7 +17,7 @@ jobs:
       shell: pwsh
       run: |
         if($IsWindows) {
-          ls C:\hostedtoolcache\windows\PyPy\3.6.12\x86\bin
+          ls C:\hostedtoolcache\windows\PyPy\3.6.12\x86
         }
     - uses: dmitry-shibanov/setup-python@v-dmshib/add-support-for-pypy
       with:
