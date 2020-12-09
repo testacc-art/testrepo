@@ -47,7 +47,7 @@ jobs:
       run: python -c 'import math; print(math.factorial(5))'
     - uses: dmitry-shibanov/setup-python@v-dmshib/add-support-for-pypy
       with:
-        python-version: 'pypy-3.x-v7.3.3'
+        python-version: 'pypy-3.x-v7.3.b123'
     - name: PyPy version
       shell: pwsh
       run: |
