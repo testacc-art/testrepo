@@ -58,5 +58,5 @@ jobs:
         }
     - name: Run simple code
       run: |
-        pip install numpy
-        python -c 'import numpy as np;a = np.arange(15).reshape(3, 5);print(a)'
+        pip install arrow
+        python -c "import arrow; a = arrow.get('2013-05-11T21:23:58.970460+07:00'); print(a)"
