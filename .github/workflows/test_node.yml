@@ -1,0 +1,36 @@
+name: Test node
+on: [push]
+jobs:
+  run:
+    name: Run
+    runs-on: ${{ matrix.operating-system }}
+    strategy:
+      fail-fast: false
+      matrix:
+        operating-system: [ubuntu-18.04, macos-latest, windows-latest]
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+    - uses: actions/setup-node@main
+      with:
+        node-version: 12
+    - name: Node version and simple code
+      run: |
+        node --version
+        node -e "const os = require('os'); console.log(os.arch())"
+    - uses: actions/setup-node@main
+      with:
+        node-version: 12
+        architecture: x64
+    - name: Node version and simple code
+      run: |
+        node --version
+        node -e "const os = require('os'); console.log(os.arch())"
+    - uses: actions/setup-node@main
+      with:
+        node-version: 12
+        architecture: x86
+    - name: Node version and simple code
+      run: |
+        node --version
+        node -e "const os = require('os'); console.log(os.arch())"
