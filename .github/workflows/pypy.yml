@@ -19,7 +19,7 @@ jobs:
         if($IsWindows) {
           ls C:\hostedtoolcache\windows\PyPy\3.6.12\x86\bin
         }
-    - uses: dmitry-shibanov/setup-python@v-dmshib/add-support-for-pypy
+    - uses: dmitry-shibanov/setup-python@v-dmshib/prepare-add-pypy-installation
       with:
         python-version: ${{ matrix.pypy }}
     - name: PyPy version
