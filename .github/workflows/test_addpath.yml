@@ -1,0 +1,30 @@
+name: Test pypy3 case add path
+on: [push]
+jobs:
+  run:
+    name: Run
+    runs-on: ${{ matrix.operating-system }}
+    strategy:
+      fail-fast: false
+      matrix:
+        operating-system: [ubuntu-18.04, macos-latest, windows-latest, ubuntu-16.04, ubuntu-20.04, windows-2016]
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+    - uses: dmitry-shibanov/setup-python@v-dmshib/add-scripts-to-path
+      with:
+        python-version: pypy3
+    - name: Rm bin
+      shell: pwsh
+      run: |
+        if ($IsWindows){
+          rm -r "C:/hostedtoolcache/windows/PyPy/3.6.12/x86/bin"
+        }
+    - name: PyPy version
+      shell: pwsh
+      run: python --version
+    - name: Run simple code
+      run: |
+        pip install arrow
+        python -c "import arrow;print(arrow.get('2013-05-11T21:23:58.970460+07:00'))"
+        python -c 'import math; print(math.factorial(5))'
