@@ -11,19 +11,7 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v2
-    - name: Check arch
-      run: node -e "const os = require('os'); console.log(os.arch())"
-    - name: PyPy version
-      shell: pwsh
-      run: |
-        if($IsWindows) {
-          ls C:\hostedtoolcache\windows\PyPy\3.6.12\x86
-        }elseif($IsLinux) {
-          ls /opt/hostedtoolcache/PyPy/3.6.12/x64/bin/
-        } else {
-          ls /Users/runner/hostedtoolcache/PyPy/3.6.12/x64/bin
-        }
-    - uses: dmitry-shibanov/setup-python@v-dmshib/add-pypy-installation
+    - uses: dmitry-shibanov/setup-python@v-dmshib/fix-pypy-inst-python
       with:
         python-version: 'pypy-3.7-v7.3.3'
     - name: PyPy version
@@ -36,7 +24,7 @@ jobs:
         }
     - name: Run simple code
       run: python -c 'import math; print(math.factorial(5))'
-    - uses: dmitry-shibanov/setup-python@v-dmshib/add-pypy-installation
+    - uses: dmitry-shibanov/setup-python@v-dmshib/fix-pypy-inst-python
       with:
         python-version: 'pypy-3.6-v7.3.3'
     - name: PyPy version
@@ -49,7 +37,7 @@ jobs:
         }
     - name: Run simple code
       run: python -c 'import math; print(math.factorial(5))'
-    - uses: dmitry-shibanov/setup-python@v-dmshib/add-pypy-installation
+    - uses: dmitry-shibanov/setup-python@v-dmshib/fix-pypy-inst-python
       with:
         python-version: 'pypy-3.7-7.3.x'
     - name: PyPy version
@@ -64,3 +52,16 @@ jobs:
       run: |
         pip install arrow
         python -c "import arrow; a = arrow.get('2013-05-11T21:23:58.970460+07:00'); print(a)"
+    - uses: dmitry-shibanov/setup-python@v-dmshib/fix-pypy-inst-python
+      with:
+        python-version: 'pypy-3.6-v7.3.3'
+    - name: PyPy version
+      shell: pwsh
+      run: |
+        if($IsWindows) {
+          python --version
+        } else {
+          python --version
+        }
+    - name: Run simple code
+      run: python -c 'import math; print(math.factorial(5))'
