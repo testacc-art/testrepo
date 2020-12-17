@@ -26,6 +26,19 @@ jobs:
       run: python -c 'import math; print(math.factorial(5))'
     - uses: dmitry-shibanov/setup-python@v-dmshib/fix-pypy-inst-python
       with:
+        python-version: 'pypy-2.7-nightly'
+    - name: PyPy version
+      shell: pwsh
+      run: |
+        if($IsWindows) {
+          python --version
+        } else {
+          python --version
+        }
+    - name: Run simple code
+      run: python -c 'import math; print(math.factorial(5))'
+    - uses: dmitry-shibanov/setup-python@v-dmshib/fix-pypy-inst-python
+      with:
         python-version: 'pypy-3.6-v7.3.3'
     - name: PyPy version
       shell: pwsh
@@ -55,6 +68,19 @@ jobs:
     - uses: dmitry-shibanov/setup-python@v-dmshib/fix-pypy-inst-python
       with:
         python-version: 'pypy-3.6-v7.3.3'
+    - name: PyPy version
+      shell: pwsh
+      run: |
+        if($IsWindows) {
+          python --version
+        } else {
+          python --version
+        }
+    - name: Run simple code
+      run: python -c 'import math; print(math.factorial(5))'
+    - uses: dmitry-shibanov/setup-python@v-dmshib/fix-pypy-inst-python
+      with:
+        python-version: 'pypy-2.7-nightly'
     - name: PyPy version
       shell: pwsh
       run: |
