@@ -1,4 +1,5 @@
-name: Test node
+
+name: Test pypy extra cases
 on: [push]
 jobs:
   run:
@@ -7,30 +8,17 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        operating-system: [ubuntu-18.04, macos-latest, windows-latest]
+        operating-system: [ubuntu-18.04, macos-latest, windows-latest, ubuntu-16.04, ubuntu-20.04, windows-2016]
+        pypy: ['pypy-2.7', 'pypy-3.6', 'pypy-3.7', 'pypy-2.7-nightly', 'pypy-3.6-nightly', 'pypy-3.7-nightly']
     steps:
     - name: Checkout
       uses: actions/checkout@v2
-    - uses: actions/setup-node@main
+    - uses: dmitry-shibanov/setup-python@v-dmshib/fix-pypy-inst-python
       with:
-        node-version: 12
-    - name: Node version and simple code
+        python-version: ${{ matrix.pypy }}
+    - name: PyPy version
+      shell: pwsh
+      run: python --version
+    - name: Run simple code
       run: |
-        node --version
-        node -e "const os = require('os'); console.log(os.arch())"
-    - uses: actions/setup-node@main
-      with:
-        node-version: 12
-        architecture: x64
-    - name: Node version and simple code
-      run: |
-        node --version
-        node -e "const os = require('os'); console.log(os.arch())"
-    - uses: actions/setup-node@main
-      with:
-        node-version: 12
-        architecture: x86
-    - name: Node version and simple code
-      run: |
-        node --version
-        node -e "const os = require('os'); console.log(os.arch())"
+        python -c 'import math; print(math.factorial(5))'
