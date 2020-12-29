@@ -1,15 +1,25 @@
 {
-  "name": "testrepo",
+  "name": "@testacc-art/testrepo",
   "version": "1.0.0",
-  "description": "",
+  "description": "description",
   "main": "index.js",
   "scripts": {
     "start": "http-server -c-1"
   },
   "keywords": [],
-  "author": "testacc-art",
+  "author": {
+    "name": "testacc-art",
+    "email": "testacc-art@github.com"
+  }
   "license": "ISC",
   "devDependencies": {
     "http-server": "^0.9.0"
+  }
+  "repository": {
+      "type": "git",
+      "url": "git+https://github.com/testacc-art/testrepo.git"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/testacc-art"
   }
 }
