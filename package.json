@@ -1,0 +1,15 @@
+{
+  "name": "empty-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "http-server -c-1"
+  },
+  "keywords": [],
+  "author": "testacc-art",
+  "license": "ISC",
+  "devDependencies": {
+    "http-server": "^0.9.0"
+  }
+}
