@@ -9,12 +9,14 @@ jobs:
       matrix:
         operating-system: [ubuntu-18.04, macos-latest, windows-latest]
         version: ['11.x', '1.11.x']
+        provider: ["adopOpenJdk", "zulu"]
     steps:
     - name: Checkout
       uses: actions/checkout@v2
     - uses: dmitry-shibanov/setup-java@start-work-providers-feature
       with:
         java-version: ${{ matrix.version }}
+        provider: ${{ matrix.provider }}
     - name: Java version
       shell: pwsh
       run: java -version
