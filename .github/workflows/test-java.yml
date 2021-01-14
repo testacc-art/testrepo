@@ -1,0 +1,20 @@
+name: Test java
+on: [push]
+jobs:
+  run:
+    name: Run
+    runs-on: ${{ matrix.operating-system }}
+    strategy:
+      fail-fast: false
+      matrix:
+        operating-system: [ubuntu-18.04, macos-latest, windows-latest]
+        version: ['11.x', '1.11.x']
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+    - uses: dmitry-shibanov/setup-java@start-work-providers-feature
+      with:
+        java-version: ${{ matrix.version }}
+    - name: Java version
+      shell: pwsh
+      run: java -version
