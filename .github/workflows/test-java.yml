@@ -26,3 +26,13 @@ jobs:
     - name: Java version
       shell: pwsh
       run: java -version
+    - uses: actions/setup-java@v1
+      with:
+        java-version: 1.8.x
+    - uses: dmitry-shibanov/setup-java@start-work-providers-feature
+      with:
+        java-version: ${{ matrix.version }}
+        provider: ${{ matrix.provider }}
+    - name: Java version
+      shell: pwsh
+      run: java -version
