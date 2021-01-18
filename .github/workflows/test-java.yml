@@ -18,7 +18,7 @@ jobs:
       with:
         java-version: 8.x
 
-    - run: echo ${{steps.setupJava.outputs.output}}
+    - run: echo ${{steps.setupJava.outputs}}
       shell: bash
       name: output from setup-java
 #     - uses: actions/setup-java@v1
