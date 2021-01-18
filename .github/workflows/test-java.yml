@@ -8,7 +8,7 @@ jobs:
       fail-fast: false
       matrix:
         operating-system: [ubuntu-18.04, macos-latest, windows-latest]
-        version: [ '1.11.x', '1.12', '13.x', '11.0.x', '1.8.x', '1.8', '8.x', 'x' ]
+        version: [ '1.11.x', '1.12', '13.x', '11.0.x', '1.8.x', '1.8', '8.x', 'x', '7.x' ]
         provider: ["adopOpenJdk", "zulu"]
     steps:
     - name: Checkout
