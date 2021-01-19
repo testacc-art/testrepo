@@ -9,7 +9,7 @@ jobs:
       matrix:
         operating-system: [ubuntu-18.04, macos-latest, windows-latest]
         version: [ '1.11.x', '1.12', '13.x', '11.0.x', '1.8.x', '1.8', '8.x', 'x', '7.x' ]
-        java-package: ['jdk', 'jre', 'jdk+fx']
+        java-package: ['jdk', 'jre']
         provider: ["adopOpenJdk", "zulu"]
     steps:
     - name: Checkout
@@ -30,6 +30,7 @@ jobs:
         java-version: ${{ matrix.version }}
         provider: ${{ matrix.provider }}
         java-package: ${{ matrix.java-package }}
+        feature: fx
     - name: Java version
       shell: pwsh
       run: java -version
