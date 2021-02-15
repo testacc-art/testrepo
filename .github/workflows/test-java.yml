@@ -18,9 +18,8 @@ jobs:
     - uses: dmitry-shibanov/setup-java@start-work-providers-feature
       with:
         java-version: ${{ matrix.version }}
-        provider: ${{ matrix.provider }}
+        java-distro: ${{ matrix.provider }}
         java-package: ${{ matrix.java-package }}
-        feature: fx
     - name: Java version
       shell: pwsh
       run: java -version
@@ -29,7 +28,6 @@ jobs:
         java-version: ${{ matrix.version }}
         provider: ${{ matrix.provider }}
         java-package: ${{ matrix.java-package }}
-        feature: fx
     - name: Java version
       shell: pwsh
       run: java -version
