@@ -15,7 +15,7 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2
 
-    - uses: dmitry-shibanov/setup-java@start-work-providers-feature
+    - uses: dmitry-shibanov/setup-java@add-support-for-jdkfile
       with:
         java-version: ${{ matrix.version }}
         distribution: ${{ matrix.provider }}
@@ -23,7 +23,7 @@ jobs:
     - name: Java version
       shell: pwsh
       run: java -version
-    - uses: dmitry-shibanov/setup-java@start-work-providers-feature
+    - uses: dmitry-shibanov/setup-java@add-support-for-jdkfile
       with:
         java-version: ${{ matrix.version }}
         distribution: ${{ matrix.provider }}
