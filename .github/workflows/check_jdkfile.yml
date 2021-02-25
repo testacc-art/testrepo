@@ -8,8 +8,8 @@ jobs:
       fail-fast: false
       matrix:
         operating-system: [ubuntu-18.04]
-        version: 13.0.2
-        java-package: jdk
+        version: [13.0.2]
+        java-package: [jdk]
         provider: [jdkFile]
     steps:
     - name: Checkout
