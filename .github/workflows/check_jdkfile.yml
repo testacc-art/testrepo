@@ -1,0 +1,38 @@
+name: Test jdkFile
+on: [push]
+jobs:
+  run:
+    name: Run
+    runs-on: ${{ matrix.operating-system }}
+    strategy:
+      fail-fast: false
+      matrix:
+        operating-system: [ubuntu-18.04]
+        version: 13.0.2
+        java-package: jdk
+        provider: [jdkFile]
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+      
+    - name: get archive
+      run: wget https://cdn.azul.com/zulu/bin/zulu13.29.11-ca-fx-jdk13.0.2-linux_x64.tar.gz
+
+    - uses: dmitry-shibanov/setup-java@add-support-for-jdkfile
+      with:
+        java-version: ${{ matrix.version }}
+        distribution: ${{ matrix.provider }}
+        java-package: ${{ matrix.java-package }}
+        jdkfile: zulu13.29.11-ca-fx-jdk13.0.2-linux_x64.tar.gz
+    - name: Java version
+      shell: pwsh
+      run: java -version
+    - uses: dmitry-shibanov/setup-java@add-support-for-jdkfile
+      with:
+        java-version: ${{ matrix.version }}
+        distribution: ${{ matrix.provider }}
+        java-package: ${{ matrix.java-package }}
+        jdkFile: zulu13.29.11-ca-fx-jdk13.0.2-linux_x64.tar.gz
+    - name: Java version
+      shell: pwsh
+      run: java -version
