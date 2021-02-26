@@ -8,7 +8,7 @@ jobs:
       fail-fast: false
       matrix:
         operating-system: [ubuntu-18.04, macos-latest, windows-latest]
-        version: [ '1.11.x', '1.12', '13.x', '11.0.x-ea', '1.8.x', '1.8-ea', '7.x', '7.x-ea' ]
+        version: [ '1.11.x', '1.12', '13.x', '14.x-ea', '11.0.x-ea', '1.8.x', '1.8-ea', '7.x', '7.x-ea' ]
         java-package: ['jdk', 'jre']
         provider: ["adoptOpenJdk", "zulu"]
     steps:
