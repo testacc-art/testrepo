@@ -1,0 +1,33 @@
+name: Test java ea and ga
+on: [push]
+jobs:
+  run:
+    name: Run
+    runs-on: ${{ matrix.operating-system }}
+    strategy:
+      fail-fast: false
+      matrix:
+        operating-system: [ubuntu-18.04, macos-latest, windows-latest]
+        version: [ '1.11.x', '1.12', '13.x', '11.0.x-ea', '1.8.x', '1.8-ea', '7.x', '7.x-ea' ]
+        java-package: ['jdk', 'jre']
+        provider: ["adoptOpenJdk", "zulu"]
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - uses: dmitry-shibanov/setup-java@add-ea-ga-access
+      with:
+        java-version: ${{ matrix.version }}
+        distribution: ${{ matrix.provider }}
+        java-package: ${{ matrix.java-package }}
+    - name: Java version
+      shell: pwsh
+      run: java -version
+    - uses: dmitry-shibanov/setup-java@add-ea-ga-access
+      with:
+        java-version: ${{ matrix.version }}
+        distribution: ${{ matrix.provider }}
+        java-package: ${{ matrix.java-package }}
+    - name: Java version
+      shell: pwsh
+      run: java -version
