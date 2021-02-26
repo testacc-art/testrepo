@@ -23,7 +23,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: setup-java ${{ matrix.java }}
-        uses: dmitry-shibanov/setup-java@preparation-for-setup-java@v2
+        uses: dmitry-shibanov/setup-java@add-ea-ga-access
         with:
           java-version: ${{ matrix.java }}
           java-package: ${{ matrix.java-package }}
@@ -52,7 +52,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: setup-java ${{ matrix.java }}
-        uses: dmitry-shibanov/setup-java@preparation-for-setup-java@v2
+        uses: dmitry-shibanov/setup-java@add-ea-ga-access
         with:
           java-version: ${{ matrix.java }}
           java-package: ${{ matrix.java-package }}
@@ -79,7 +79,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: setup-java ${{ matrix.java }}
-        uses: dmitry-shibanov/setup-java@preparation-for-setup-java@v2
+        uses: dmitry-shibanov/setup-java@add-ea-ga-access
         with:
           java-version: ${{ matrix.java }}
           java-package: ${{ matrix.java-package }}
