@@ -16,7 +16,7 @@ jobs:
       uses: actions/checkout@v2
       
     - name: get archive
-      run: wget url":"https://cdn.azul.com/zulu/bin/zulu15.27.17-ca-fx-jdk15.0.0-macosx_x64.tar.gz
+      run: wget "https://cdn.azul.com/zulu/bin/zulu15.27.17-ca-fx-jdk15.0.0-macosx_x64.tar.gz"
 
     - uses: dmitry-shibanov/setup-java@add-support-for-jdkfile
       with:
