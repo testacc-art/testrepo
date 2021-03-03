@@ -8,7 +8,7 @@ jobs:
       fail-fast: false
       matrix:
         operating-system: [macos-latest]
-        version: [13.0.2]
+        version: [15.0.0]
         java-package: [jdk]
         provider: [jdkFile]
     steps:
