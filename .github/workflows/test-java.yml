@@ -25,7 +25,7 @@ jobs:
       run: java -version
     - uses: dmitry-shibanov/setup-java@v-dmshib/test-ea-cache
       with:
-        java-version: '15'
+        java-version: '15.0.0'
         distribution: ${{ matrix.provider }}
         java-package: ${{ matrix.java-package }}
     - name: Java version
@@ -41,7 +41,7 @@ jobs:
       run: java -version
     - uses: dmitry-shibanov/setup-java@v-dmshib/test-ea-cache
       with:
-        java-version: '15'
+        java-version: '15.0.0'
         distribution: ${{ matrix.provider }}
         java-package: ${{ matrix.java-package }}
     - name: Java version
