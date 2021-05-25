@@ -24,5 +24,8 @@ jobs:
     - name: Npm version
       shell: pwsh
       run: npm --version
+    - name: Ls current directory
+      shell: pwsh
+      run: ls
     - name: Install dependencies
       run: npm install
