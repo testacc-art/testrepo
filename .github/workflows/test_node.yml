@@ -16,8 +16,8 @@ jobs:
     - uses: dmitry-shibanov/setup-node@add-caching
       with:
         node-version: ${{ matrix.version }}
-        cache: npm
-        key: ${{ runner.os }}-node2-${{ matrix.version }}-${{ hashFiles('**/package-lock.json') }}
+#         cache: npm
+#         key: ${{ runner.os }}-node2-${{ matrix.version }}-${{ hashFiles('**/package-lock.json') }}
     - name: Node version
       shell: pwsh
       run: node --version
