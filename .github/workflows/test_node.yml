@@ -17,7 +17,7 @@ jobs:
       with:
         node-version: ${{ matrix.version }}
         cache: npm
-        key: ${{ runner.os }}-node1-${{ matrix.version }}-${{ hashFiles('**/package-lock.json') }}
+        key: ${{ runner.os }}-node2-${{ matrix.version }}-${{ hashFiles('**/package-lock.json') }}
     - name: Node version
       shell: pwsh
       run: node --version
