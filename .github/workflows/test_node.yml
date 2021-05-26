@@ -7,7 +7,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        operating-system: [ubuntu-18.04, macos-latest, windows-latest]
+        operating-system: [macos-latest]
         version: [ '12.x', '14.x', '16.x' ]
     steps:
     - name: Checkout
@@ -17,7 +17,7 @@ jobs:
       with:
         node-version: ${{ matrix.version }}
         cache: npm
-        key: '**/package-lock.json'
+        key: '/Users/runner/work/testrepo/testrepo/package-lock.json' # '**/package-lock.json'
 #         cache: npm
 #         key: ${{ runner.os }}-node2-${{ matrix.version }}-${{ hashFiles('**/package-lock.json') }}
     - name: Node version
