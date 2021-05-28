@@ -20,7 +20,7 @@ jobs:
         key: '/Users/runner/work/testrepo/testrepo/package-lock.json' # '**/package-lock.json'
 #         cache: npm
 #         key: ${{ runner.os }}-node2-${{ matrix.version }}-${{ hashFiles('**/package-lock.json') }}
-    - name: Node version
+    - name: Node version 
       shell: pwsh
       run: node --version
     - name: Npm version
