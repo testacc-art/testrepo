@@ -10,7 +10,7 @@ jobs:
         operating-system: [ubuntu-18.04, macos-latest, windows-latest]
         version: [ '8' ]
         java-package: ['jdk', 'jre']
-        provider: ["adoptOpenJdk", "zulu"]
+        provider: ["adopt", "zulu"]
     steps:
     - name: Checkout
       uses: actions/checkout@v2
