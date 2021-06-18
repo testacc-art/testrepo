@@ -8,43 +8,20 @@ jobs:
       fail-fast: false
       matrix:
         operating-system: [ubuntu-18.04, macos-latest, windows-latest]
-        version: [ '15-ea' ]
+        version: [ '8' ]
         java-package: ['jdk', 'jre']
         provider: ["adoptOpenJdk", "zulu"]
     steps:
     - name: Checkout
       uses: actions/checkout@v2
 
-    - uses: dmitry-shibanov/setup-java@v-dmshib/test-ea-cache
+    - uses: actions/setup-java@v2
       with:
         java-version: ${{ matrix.version }}
         distribution: ${{ matrix.provider }}
         java-package: ${{ matrix.java-package }}
+        check-latest: true
     - name: Java version
       shell: pwsh
       run: java -version
-    - uses: dmitry-shibanov/setup-java@v-dmshib/test-ea-cache
-      with:
-        java-version: '15.0.0'
-        distribution: ${{ matrix.provider }}
-        java-package: ${{ matrix.java-package }}
-    - name: Java version
-      shell: pwsh
-      run: java -version
-    - uses: dmitry-shibanov/setup-java@v-dmshib/test-ea-cache
-      with:
-        java-version: ${{ matrix.version }}
-        distribution: ${{ matrix.provider }}
-        java-package: ${{ matrix.java-package }}
-    - name: Java version
-      shell: pwsh
-      run: java -version
-    - uses: dmitry-shibanov/setup-java@v-dmshib/test-ea-cache
-      with:
-        java-version: '15.0.0'
-        distribution: ${{ matrix.provider }}
-        java-package: ${{ matrix.java-package }}
-    - name: Java version
-      shell: pwsh
-      run: java -version
-
+   
